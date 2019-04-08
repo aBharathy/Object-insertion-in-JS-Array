@@ -11,11 +11,13 @@ function add_element_to_array()
     var newPerson = {Name : document.getElementById("name").value,
 					 Age : age};
 					 /*newPerson.Age = 10;
-					 newPerson['Name'] = "seetha";*/
+					 newPerson['Name'] = "seetha";
+					 THE ABOVE CODE IS TWO DIFFERENT SYNTAX FOR  ASSINGING A VALUE TO THE OBJECT'S PROPERTY. iT ALSO WORKS
+					 */
 					 
     alert(newPerson.Name+" " +newPerson.Age);
 	//alert("hai");
-	alert("lennght of the array :" + " " +personArr.length);
+	//alert("lennght of the array :" + " " +personArr.length);
     personArr.push(newPerson);
 	alert("Added to Person Array");
 	dispArray();
@@ -25,6 +27,15 @@ function add_element_to_array()
   function dispArray()
   {
 	  for(let i = 0; i <personArr.length; i++)
-		  document.write(personArr[i].Name + "  "+ personArr[i].Age+"\n");
+	  {
+		  //document.write(personArr[i].Name + "  "+ personArr[i].Age+"\n");*/
+		let Personrow =document.getElementById("persontable");
+		let plist = document.createElement('tr');
+		plist.innerHTML="<td>"+personArr[i].Name+"</td>"+"<td>"+personArr[i].Age+"</td>";
+		Personrow.appendChild(plist);
+	  }
+	  
+	  
+	  
   }
   
